@@ -6,6 +6,7 @@ metadata:
 
 parnet_encore_eclip:
   data_pt: /mnt/storage1/ml4rg26-shared/parnet-eclip/data-formatted-for-training/encode.filtered.pt
+  data_hfds: /mnt/storage1/ml4rg26-shared/parnet-eclip/data-formatted-for-training/encode.filtered.hfds
 
 global_clip:
   data_interphase: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_interphase_600bp_signalfiltered.pt.gz
