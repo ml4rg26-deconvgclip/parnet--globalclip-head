@@ -1,0 +1,16 @@
+models:
+  parnet.7m-0.0: /mnt/storage1/ml4rg26-shared/parnet-eclip/models-full-rbp-set/parnet.7m-0.0.pt
+
+metadata:
+  full_rbp_set: /mnt/storage1/ml4rg26-shared/parnet-eclip/models-full-rbp-set/full_rbp_set.tsv
+
+parnet_encore_eclip:
+  data_pt: /mnt/storage1/ml4rg26-shared/parnet-eclip/data-formatted-for-training/encode.filtered.pt
+
+global_clip:
+  data_interphase: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_interphase_600bp_signalfiltered.pt.gz
+  data_lysate: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_600bp_signalfiltered.pt.gz
+  data_eclip_matched: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/eCLIP_600bp_signalfiltered.pt.gz
+
+results:
+  base: /mnt/storage1/ml4rg26-deconvgclip/parnet--globalclip-head/results/
