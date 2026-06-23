@@ -1,0 +1,280 @@
+[workspace]
+
+authors = []
+channels = ["rapidsai", "conda-forge", "bioconda"]
+name = "parnet--globalclip-head"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+
+python = ">=3.10,<3.11"
+pip = ">=25.1"
+#
+ipykernel = ">=6.29,<6.30"
+ipython = ">=8.37,<9.0"
+numba = ">=0.61,<0.62"  # tighter lower bound from interpretation
+#
+# Data analysis
+array-api-compat = "*"
+jaxtyping = ">=0.3.2,<0.4"
+numpy = ">=1.26,<2.0"
+pandas = ">=2.2,<2.3"
+pandera = ">=0.26.1,<1.0"  # tighter lower bound from mutations
+parquet-tools = ">=0.2,<1.0"
+polars = ">=1.37.1,<2"
+pyarrow = ">=14.0,<21.0"
+pydantic = ">=2.11,<3.0"
+pydash = ">=8.0.5,<9"
+ragged = ">=0.2.0,<0.3"
+#
+# ML
+skglm = ">=0.4,<0.5"
+scipy = ">=1.15,<1.16"
+scikit-learn = ">=1.7.0,<1.8.0"
+sklearn-pandas = ">=2.2.0,<2.5"
+umap-learn = ">=0.5.7,<0.6"
+#
+# Misc
+dotmap = "*"
+gdown = ">=5.2.0,<6"
+glom = ">=24.11.0,<25"
+jsonschema = ">=4.24,<5.0"
+more-itertools = ">=10.7,<11.0"
+orjson = ">=3.10,<4.0"
+python-dotenv = ">=1.1,<1.5"
+pyyaml = ">=6.0,<7.0"
+snakemake-minimal = ">=7.28,<8.0"
+tqdm = ">=4.67.1,<5"
+yte = ">=1.8.1,<2"
+#
+# Data viz
+logomaker = ">=0.8.6,<0.9"
+matplotlib = ">=3.10,<4.0"
+matplotlib-venn = ">=1.1.2,<2"
+patchworklib = ">=0.6.3,<0.7"
+plotnine = ">=0.14,<1.0"
+seaborn = ">=0.13,<1.0"
+upsetplot = ">=0.9.0,<0.10"
+#
+# System
+gcc = ">=15.1.0,<15.2"
+libgcc = ">=15.1.0,<16"
+libopenblas = ">=0.3.29,<0.4"
+libstdcxx-ng = ">=15.1.0,<16"
+zlib = ">=1.3.1,<2"
+liftover = ">=1.3.3,<2"
+hgvs = ">=1.5.6,<2"
+
+[pypi-dependencies]
+
+# Local library — filtering utilities, sparse helpers, dataset classes
+parnet--globalclip-head = {path = ".", editable = true}
+
+google-api-python-client = "*"
+dask = ">=2025.2.0,<2025.11.0"
+jax = ">=0.4,<0.5"
+jaxlib = ">=0.4,<0.5"
+protobuf = "==4.25.8"
+# ===============================================================
+
+[feature.superfluous.dependencies]
+
+boltons = ">=25.0.0,<26"
+click = ">=8.2,<9.0"
+duckdb = ">=1.3.2,<2"
+duckdb-cli = ">=1.3.0,<2"
+funcy = ">=2.0,<3"
+furl = ">=2.1.4,<3"
+ibis-framework = ">=10.5.0,<11"
+great-expectations = ">=0.18.15,<0.19"
+hydra-core = ">=1.3.2,<2"
+pomegranate = ">=1.0.0,<2"
+omegaconf = ">=2.3.0,<3"
+rich = ">=14.0,<15.0"
+universal_pathlib = ">=0.2.6,<0.3"
+
+# ===============================================================
+
+[feature.bio.dependencies]
+
+#genomekit = ">=5.0,<8.0"
+bedops = ">=2.4.40,<2.5"
+bedtools = "==2.31.1"
+biopython = ">=1.83,<1.85"
+forgi = ">=2.2.3,<3"
+pybigtools = ">=0.2.4,<0.3"
+pysam = ">=0.23.3,<0.24"
+pybedtools = ">=0.12.0,<0.13"
+pybigwig = ">=0.3.22,<0.4"
+ucsc-wigToBigWig = "*"
+ucsc-bigWigToWig = "*"
+ucsc-bedgraphtobigwig = "*"
+viennarna = ">=2.6.0,<2.7.0"
+pyfaidx = ">=0.8.1.4,<0.9"
+
+[feature.bio.pypi-dependencies]
+
+tangermeme = { git = "git+https://github.com/jmschrei/tangermeme.git", rev = "main" }
+memelite = "==0.2.0"
+modisco-lite = { git = "git+https://github.com/jmschrei/tfmodisco-lite.git", rev = "main" }
+
+# ===============================================================
+
+[feature.dev.dependencies]
+
+yamllint = ">=1.37,<1.40"
+ruff = ">=0.11,<1.0"
+mkdocstrings-python = ">=1.16,<2.0"
+mkdocs = ">=1.6,<2.0"
+mkdocs-material = ">=9.6,<10.0"
+pytest = ">=8.4,<9"
+pytest-cov = ">=6.0,<7.0"
+pre-commit = ">=4.0,<5.0"
+mypy = ">=1.11,<2.0"
+pyright = ">=1.1.402,<2"
+
+# ===============================================================
+
+[feature.jupyter.dependencies]
+
+jupyter = ">=1.1,<2.0"
+jupyterlab = ">=4.4,<5.0"
+papermill = ">=2.6,<3.0"
+
+[feature.jupyter.pypi-dependencies]
+
+igv-notebook = { git = "git+https://github.com/igvteam/igv-notebook.git", rev = "2995132" }
+
+# ===============================================================
+
+[feature.parnet-all.dependencies]
+
+captum = ">=0.7.0,<0.8"
+gin-config = "==0.5.0"
+datasets = ">=3.6.0,<4.0.0"
+lightning = ">=2.3,<2.6"
+lightning-utilities = ">=0.14,<0.15"
+transformers = ">=4.40,<5"
+torchmetrics = ">=1.8.2,<2"
+
+# ===============================================================
+
+[feature.parnet-cpu.dependencies]
+
+python = ">=3.10,<3.11"
+pytorch-cpu = "==2.5.1"
+
+[feature.parnet-cpu.pypi-dependencies]
+
+tensorflow = { version = ">=2.16,<2.17" }
+parnet = { git = "git+https://github.com/lambosaur/parnet.git", rev = "2e14278" }
+
+# ===============================================================
+
+[feature.parnet-gpu-cu11]
+
+platforms = ["linux-64"]
+# NOTE: required for correct package resolution;
+# this is NOT probing the host system, but a constraint for the solver.
+system-requirements = { cuda = "11.8" }
+
+[feature.parnet-gpu-cu11.dependencies]
+
+cuda-version = "11.8.*"
+cudatoolkit = "11.8.*"
+pytorch-gpu = { version = "==2.5.1", channel = "conda-forge" }
+cupy = ">=13.6.0,<14"
+
+[feature.parnet-gpu-cu11.pypi-dependencies]
+
+tensorflow = { version = ">=2.16,<2.17", extras = ["and-cuda"] }
+parnet = { git = "git+https://github.com/lambosaur/parnet.git", rev = "2e14278", extras = [
+    "gpu",
+] }
+
+nx-cugraph-cu11 = "==25.6.0"
+cudf-cu11 = ">=25.0,<26.0"
+cuml-cu11 = ">=25.0,<26.0"
+
+# ===============================================================
+
+[feature.parnet-gpu-cu12]
+
+platforms = ["linux-64"]
+# CUDA 12.8 driver requirement; system driver (13.2) is backward-compatible.
+# PyTorch is installed from the official PyTorch CUDA 12.8 wheel index (PyPI)
+# to avoid the conda-forge triton↔Python-3.10↔GCC-15 conflict.
+system-requirements = { cuda = "12.8" }
+
+[feature.parnet-gpu-cu12.dependencies]
+
+# cuda-version pins conda CUDA libs for cupy; no pytorch-gpu (installed via PyPI below).
+cuda-version = "12.8.*"
+cupy = ">=13.6.0,<14"
+datasets = ">=3.6.0,<4.0.0"
+transformers = ">=4.40"
+gin-config = "==0.5.0"
+
+[feature.parnet-gpu-cu12.pypi-options]
+
+# Use the PyTorch CUDA 12.8 index as primary so torch resolves to the GPU wheel.
+# All other packages (captum, lightning, etc.) fall back to standard PyPI.
+index-url = "https://download.pytorch.org/whl/cu128"
+extra-index-urls = ["https://pypi.org/simple"]
+
+[feature.parnet-gpu-cu12.pypi-dependencies]
+
+# PyTorch GPU — resolved from index-url above (CUDA 12.8 wheel).
+torch = ">=2.6.0"
+
+# Packages that are conda deps in parnet-all but need to be PyPI here to avoid
+# conda-forge captum/torchmetrics pulling in a conda pytorch (which would conflict
+# with the PyPI torch). parnet-all is excluded from parnet-dev-cu12 for this reason.
+# datasets is installed via conda (above) to avoid dill/pyarrow conda pin conflicts.
+captum = ">=0.7.0,<0.8"
+lightning = ">=2.3,<2.6"
+lightning-utilities = ">=0.14,<0.15"
+torchmetrics = ">=1.8.2,<2"
+
+# TF runs CPU-only here: torch CUDA + tensorflow[and-cuda] both pin nvidia-cublas-cu12
+# at conflicting versions and cannot coexist in the same PyPI environment.
+tensorflow = { version = ">=2.16,<2.17" }
+parnet = { git = "git+https://github.com/lambosaur/parnet.git", rev = "dev" }
+
+# cudf <25.10 needs pyarrow<20, but conda pins pyarrow==20.0.0.
+# cudf >=25.10 requires exactly pyarrow==20.0.0 — matching the conda pin.
+nx-cugraph-cu12 = ">=25.10.0,<26.0"
+cudf-cu12 = ">=25.10.0,<26.0"
+cuml-cu12 = ">=25.0,<26.0"
+
+# ===============================================================
+
+[feature.parnet-libs-git.pypi-dependencies]
+
+pylbsr                  = { git = "git+https://github.com/lambosaur/pylbsr.git",                       rev = "main" }
+parnet_analyses_libs    = { git = "git+https://github.com/parnet-project/parnet_analyses_libs.git",    rev = "main" }
+parnet_additional_utils = { git = "git+https://github.com/parnet-project/parnet_additional_utils.git", rev = "main" }
+metamotif               = { git = "git+https://github.com/lambosaur/metamotif.git", rev = "develop" }
+
+# ===============================================================
+
+[feature.parnet-libs-local.pypi-dependencies]
+
+pylbsr                  = { path = "externals/pylbsr",                  editable = true }
+parnet_analyses_libs    = { path = "externals/parnet_analyses_libs",    editable = true }
+parnet_additional_utils = { path = "externals/parnet_additional_utils", editable = true }
+metamotif               = { path = "externals/metamotif",               editable = true }
+
+# ===============================================================
+
+[environments]
+
+parnet-dev            = ["parnet-all", "parnet-cpu",      "parnet-libs-git",   "bio", "jupyter", "dev"]
+parnet-dev-local      = ["parnet-all", "parnet-cpu",      "parnet-libs-local", "bio", "jupyter", "dev"]
+parnet-dev-cu11       = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-git",   "bio", "jupyter", "dev"]
+parnet-dev-cu11-local = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-local", "bio", "jupyter", "dev"]
+parnet-dev-cu12       = ["parnet-gpu-cu12", "parnet-libs-git",   "bio", "jupyter", "dev"]
+parnet-dev-cu12-local = ["parnet-gpu-cu12", "parnet-libs-local", "bio", "jupyter", "dev"]
