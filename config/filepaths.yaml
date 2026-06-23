@@ -9,10 +9,16 @@ parnet_encore_eclip:
   data_hfds: /mnt/storage1/ml4rg26-shared/parnet-eclip/data-formatted-for-training/600nt_windows.no-one-hot.stripped/encode.filtered.hfds
 
 global_clip:
+  # control 3
   data_interphase: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_interphase_600bp_signalfiltered.pt
+  # control 2
   data_lysate: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_600bp_signalfiltered.pt
+  # control 1
   data_lysate_noNHS: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_noNHS_600bp_signalfiltered.pt
+  # eCLIP matched
   data_eclip_matched: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/eCLIP_600bp_signalfiltered.pt
 
 results:
   base: /mnt/storage1/ml4rg26-deconvgclip/parnet--globalclip-head/results/
+  filtered_dataset_spliceosome_hepg2: results/spliceosome-hepg2/datasets/dataset.pt
+  filtered_dataset_spliceosome_hepg2_hfds: results/spliceosome-hepg2/datasets/dataset.hfds

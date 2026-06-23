@@ -71,7 +71,7 @@ hgvs = ">=1.5.6,<2"
 [pypi-dependencies]
 
 # Local library — filtering utilities, sparse helpers, dataset classes
-parnet--demo--train-models = {path = ".", editable = true}
+parnet--globalclip-head = {path = ".", editable = true}
 
 google-api-python-client = "*"
 dask = ">=2025.2.0,<2025.11.0"
