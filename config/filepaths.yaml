@@ -11,12 +11,17 @@ parnet_encore_eclip:
 global_clip:
   # control 3
   data_interphase: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_interphase_600bp_signalfiltered.pt
+  metadata_interphase: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_interphase_600bp_signalfiltered.metadata.yaml
   # control 2
   data_lysate: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_600bp_signalfiltered.pt
+  metadata_lysate: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_600bp_signalfiltered.metadata.yaml
   # control 1
   data_lysate_noNHS: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_noNHS_600bp_signalfiltered.pt
+  data_lysate_noNHS_filtered: /mnt/storage1/workspace/lhofer/parnet--globalclip-head/results/globalclip-head/datasets/globalclip_lysate_noNHS.minreads3.maxsignal1000.pt
+  metadata_lysate_noNHS: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/globalclip_lysate_noNHS_600bp_signalfiltered.metadata.yaml
   # eCLIP matched
   data_eclip_matched: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/eCLIP_600bp_signalfiltered.pt
+  metadata_eclip_matched: /mnt/storage1/ml4rg26-deconvgclip/provided_data/600nt_globalCLIP_synchronized_datasets/eCLIP_600bp_signalfiltered.metadata.yaml
 
 results:
   base: /mnt/storage1/ml4rg26-deconvgclip/parnet--globalclip-head/results/
