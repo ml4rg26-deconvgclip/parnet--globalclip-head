@@ -1,6 +1,8 @@
 models:
   parnet.7m-0.0: /mnt/storage1/ml4rg26-shared/parnet-eclip/models-full-rbp-set/parnet.7m-0.0.pt
-
+  parnet.21m-none: /mnt/storage1/ml4rg26-shared/parnet-eclip/models-full-rbp-set/parnet.21m-none.pt
+  parnet.21m-5.0: /mnt/storage1/ml4rg26-shared/parnet-eclip/models-full-rbp-set/parnet.21m-5.0.pt
+  
 metadata:
   full_rbp_set: /mnt/storage1/ml4rg26-shared/parnet-eclip/data-formatted-for-training/600nt_windows.no-one-hot.stripped/full_rbp_set.tsv
 
