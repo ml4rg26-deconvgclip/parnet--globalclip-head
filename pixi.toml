@@ -201,54 +201,7 @@ cuml-cu11 = ">=25.0,<26.0"
 
 # ===============================================================
 
-[feature.parnet-gpu-cu12]
 
-platforms = ["linux-64"]
-# CUDA 12.8 driver requirement; system driver (13.2) is backward-compatible.
-# PyTorch is installed from the official PyTorch CUDA 12.8 wheel index (PyPI)
-# to avoid the conda-forge triton↔Python-3.10↔GCC-15 conflict.
-system-requirements = { cuda = "12.8" }
-
-[feature.parnet-gpu-cu12.dependencies]
-
-# cuda-version pins conda CUDA libs for cupy; no pytorch-gpu (installed via PyPI below).
-cuda-version = "12.8.*"
-cupy = ">=13.6.0,<14"
-datasets = ">=3.6.0,<4.0.0"
-transformers = ">=4.40"
-gin-config = "==0.5.0"
-
-[feature.parnet-gpu-cu12.pypi-options]
-
-# Use the PyTorch CUDA 12.8 index as primary so torch resolves to the GPU wheel.
-# All other packages (captum, lightning, etc.) fall back to standard PyPI.
-index-url = "https://download.pytorch.org/whl/cu128"
-extra-index-urls = ["https://pypi.org/simple"]
-
-[feature.parnet-gpu-cu12.pypi-dependencies]
-
-# PyTorch GPU — resolved from index-url above (CUDA 12.8 wheel).
-torch = ">=2.6.0"
-
-# Packages that are conda deps in parnet-all but need to be PyPI here to avoid
-# conda-forge captum/torchmetrics pulling in a conda pytorch (which would conflict
-# with the PyPI torch). parnet-all is excluded from parnet-dev-cu12 for this reason.
-# datasets is installed via conda (above) to avoid dill/pyarrow conda pin conflicts.
-captum = ">=0.7.0,<0.8"
-lightning = ">=2.3,<2.6"
-lightning-utilities = ">=0.14,<0.15"
-torchmetrics = ">=1.8.2,<2"
-
-# TF runs CPU-only here: torch CUDA + tensorflow[and-cuda] both pin nvidia-cublas-cu12
-# at conflicting versions and cannot coexist in the same PyPI environment.
-tensorflow = { version = ">=2.16,<2.17" }
-parnet = { git = "git+https://github.com/lambosaur/parnet.git", rev = "dev" }
-
-# cudf <25.10 needs pyarrow<20, but conda pins pyarrow==20.0.0.
-# cudf >=25.10 requires exactly pyarrow==20.0.0 — matching the conda pin.
-nx-cugraph-cu12 = ">=25.10.0,<26.0"
-cudf-cu12 = ">=25.10.0,<26.0"
-cuml-cu12 = ">=25.0,<26.0"
 
 # ===============================================================
 
@@ -271,10 +224,7 @@ metamotif               = { path = "externals/metamotif",               editable
 # ===============================================================
 
 [environments]
-
-parnet-dev            = ["parnet-all", "parnet-cpu",      "parnet-libs-git",   "bio", "jupyter", "dev"]
-parnet-dev-local      = ["parnet-all", "parnet-cpu",      "parnet-libs-local", "bio", "jupyter", "dev"]
-parnet-dev-cu11       = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-git",   "bio", "jupyter", "dev"]
-parnet-dev-cu11-local = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-local", "bio", "jupyter", "dev"]
-parnet-dev-cu12       = ["parnet-gpu-cu12", "parnet-libs-git",   "bio", "jupyter", "dev"]
-parnet-dev-cu12-local = ["parnet-gpu-cu12", "parnet-libs-local", "bio", "jupyter", "dev"]
+parnet-dev            = {features = ["parnet-all", "parnet-cpu",      "parnet-libs-git",   "bio", "jupyter", "dev"], solve-group = "cpu"}
+parnet-dev-local      = {features = ["parnet-all", "parnet-cpu",      "parnet-libs-local", "bio", "jupyter", "dev"], solve-group = "cpu-local"}
+parnet-dev-cu11       = {features = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-git",   "bio", "jupyter", "dev"], solve-group = "cu11"}
+parnet-dev-cu11-local = {features = ["parnet-all", "parnet-gpu-cu11", "parnet-libs-local", "bio", "jupyter", "dev"], solve-group = "cu11-local"}
