@@ -217,6 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 results/
-
 #Externals
 externals/
+pixi.lock
